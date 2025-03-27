@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediSmart - AI Medicine Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-pills"></i>
+                <h1>MediSmart</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <button id="login-btn">Login</button>
+                <button id="signup-btn">Sign Up</button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Your AI-Powered Medicine Assistant</h2>
+                <p>Get personalized medicine recommendations based on your symptoms, conditions, and environment.</p>
+                <button id="get-started-btn">Get Started</button>
+            </div>
+            <div class="hero-image">
+                <img src="/placeholder.svg?height=300&width=300" alt="AI Medicine Assistant">
+            </div>
+        </section>
+
+        <!-- Input Section -->
+        <section id="input-section" class="input-section">
+            <h2>Tell us about your condition</h2>
+            <div class="input-container">
+                <div class="input-card">
+                    <h3><i class="fas fa-disease"></i> Disease/Condition</h3>
+                    <input type="text" id="disease-input" placeholder="Enter your condition (e.g., Common Cold)">
+                    <div id="disease-suggestions" class="suggestions"></div>
+                </div>
+                
+                <div class="input-card">
+                    <h3><i class="fas fa-head-side-cough"></i> Symptoms</h3>
+                    <div class="symptom-tags" id="symptom-tags"></div>
+                    <div class="symptom-input-container">
+                        <input type="text" id="symptom-input" placeholder="Add your symptoms">
+                        <button id="add-symptom-btn">Add</button>
+                    </div>
+                    <div id="symptom-suggestions" class="suggestions"></div>
+                </div>
+                
+                <div class="input-card">
+                    <h3><i class="fas fa-cloud-sun"></i> Environmental Factors</h3>
+                    <div class="env-factors">
+                        <div class="env-factor">
+                            <label for="temperature">Temperature</label>
+                            <select id="temperature">
+                                <option value="cold">Cold</option>
+                                <option value="moderate" selected>Moderate</option>
+                                <option value="hot">Hot</option>
+                            </select>
+                        </div>
+                        <div class="env-factor">
+                            <label for="humidity">Humidity</label>
+                            <select id="humidity">
+                                <option value="dry">Dry</option>
+                                <option value="moderate" selected>Moderate</option>
+                                <option value="humid">Humid</option>
+                            </select>
+                        </div>
+                        <div class="env-factor">
+                            <label for="season">Season</label>
+                            <select id="season">
+                                <option value="spring">Spring</option>
+                                <option value="summer">Summer</option>
+                                <option value="fall">Fall</option>
+                                <option value="winter">Winter</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="analyze-btn" class="analyze-btn">Analyze & Recommend</button>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="results-section hidden">
+            <h2>Your Personalized Medicine Recommendations</h2>
+            <div class="results-container">
+                <div class="diagnosis-card">
+                    <h3>AI Diagnosis</h3>
+                    <div id="diagnosis-result">
+                        <div class="loader"></div>
+                    </div>
+                </div>
+                
+                <div class="recommendations">
+                    <h3>Recommended Medicines</h3>
+                    <div id="medicine-recommendations">
+                        <div class="loader"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="medicine-details hidden" id="medicine-details">
+                <h3 id="medicine-name"></h3>
+                <div class="medicine-info-grid">
+                    <div class="medicine-info-card">
+                        <h4><i class="fas fa-info-circle"></i> Description</h4>
+                        <p id="medicine-description"></p>
+                    </div>
+                    <div class="medicine-info-card">
+                        <h4><i class="fas fa-prescription-bottle-alt"></i> Dosage</h4>
+                        <p id="medicine-dosage"></p>
+                    </div>
+                    <div class="medicine-info-card">
+                        <h4><i class="fas fa-clock"></i> Usage Instructions</h4>
+                        <ul id="medicine-usage"></ul>
+                    </div>
+                    <div class="medicine-info-card">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Side Effects</h4>
+                        <ul id="medicine-side-effects"></ul>
+                    </div>
+                </div>
+                <div class="feedback-section">
+                    <h4>Was this recommendation helpful?</h4>
+                    <div class="feedback-buttons">
+                        <button id="helpful-btn"><i class="fas fa-thumbs-up"></i> Yes</button>
+                        <button id="not-helpful-btn"><i class="fas fa-thumbs-down"></i> No</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2>About MediSmart</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>MediSmart is an AI-powered medicine recommendation system designed to help users understand the proper usage of medicines based on their conditions, symptoms, and environmental factors.</p>
+                    <p>Our system uses advanced decision trees and reinforcement learning algorithms to provide personalized recommendations and improve over time based on user feedback.</p>
+                    <p><strong>Note:</strong> MediSmart is for educational purposes only and should not replace professional medical advice. Always consult with a healthcare professional before taking any medication.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI-Powered Analysis</h3>
+                        <p>Our system uses machine learning to analyze your symptoms and provide accurate recommendations.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-pills"></i>
+                        <h3>Comprehensive Medicine Database</h3>
+                        <p>Access information about a wide range of medicines, their usage, dosage, and side effects.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Personalized Guidance</h3>
+                        <p>Get recommendations tailored to your specific conditions and environmental factors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer id="contact">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-pills"></i>
+                    <h2>MediSmart</h2>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@medismart.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediSmart. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+
