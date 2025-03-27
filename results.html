@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Results - HealthMate</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-capsules"></i>
+                <h1>MediSafe</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="medicine-usage.html">Medicine Guide</a></li>
+                    <li><a href="appointment.html">Doctor Appointment</a></li>
+                    <li><a href="results.html" class="active">My Results</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <button id="login-btn">Login</button>
+                <button id="signup-btn">Sign Up</button>
+            </div>
+        </header>
+
+        <!-- Page Title -->
+        <section class="page-title">
+            <h1>My Medicine Guidance Results</h1>
+            <p>View your personalized medicine usage instructions and recommendations.</p>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section">
+            <div class="section-container">
+                <div class="results-header">
+                    <h2>Your Personalized Medicine Guidance</h2>
+                    <div class="results-actions">
+                        <button class="btn secondary-btn"><i class="fas fa-print"></i> Print</button>
+                        <button class="btn secondary-btn"><i class="fas fa-download"></i> Download PDF</button>
+                        <button class="btn secondary-btn"><i class="fas fa-share-alt"></i> Share</button>
+                    </div>
+                </div>
+                
+                <div class="results-date">
+                    <p>Generated on: <span id="generation-date">March 18, 2025</span></p>
+                </div>
+                
+                <div class="results-content">
+                    <!-- Medications Summary -->
+                    <div class="result-card">
+                        <div class="result-card-header">
+                            <h3><i class="fas fa-pills"></i> Your Medications</h3>
+                        </div>
+                        <div class="medications-list">
+                            <div class="medication-item">
+                                <div class="medication-name">Lisinopril</div>
+                                <div class="medication-dosage">10mg, Once daily</div>
+                            </div>
+                            <div class="medication-item">
+                                <div class="medication-name">Metformin</div>
+                                <div class="medication-dosage">500mg, Twice daily</div>
+                            </div>
+                            <div class="medication-item">
+                                <div class="medication-name">Atorvastatin</div>
+                                <div class="medication-dosage">20mg, Once daily at bedtime</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Detailed Guidance -->
+                    <div class="result-card">
+                        <div class="result-card-header">
+                            <h3><i class="fas fa-clipboard-list"></i> Detailed Guidance</h3>
+                        </div>
+                        <div class="guidance-list">
+                            <div class="guidance-item">
+                                <h4>Lisinopril (10mg)</h4>
+                                <div class="guidance-content">
+                                    <p><strong>How to take:</strong> Take one tablet (10mg) by mouth once daily in the morning.</p>
+                                    <p><strong>Special instructions:</strong> Take with or without food. Try to take at the same time each day.</p>
+                                    <p><strong>Environmental considerations:</strong> In hot weather, stay hydrated as this medication can increase your risk of dehydration.</p>
+                                    <p><strong>Potential side effects:</strong> Dizziness, headache, dry cough, high potassium levels.</p>
+                                    <p><strong>Warning signs:</strong> Seek medical attention if you experience swelling of face/lips/tongue, difficulty breathing, or severe dizziness.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="guidance-item">
+                                <h4>Metformin (500mg)</h4>
+                                <div class="guidance-content">
+                                    <p><strong>How to take:</strong> Take one tablet (500mg) by mouth twice daily with meals.</p>
+                                    <p><strong>Special instructions:</strong> Always take with food to reduce stomach upset. Space doses evenly throughout the day.</p>
+                                    <p><strong>Environmental considerations:</strong> Store at room temperature away from moisture and heat.</p>
+                                    <p><strong>Potential side effects:</strong> Nausea, diarrhea, stomach upset, metallic taste.</p>
+                                    <p><strong>Warning signs:</strong> Seek medical attention if you experience severe stomach pain, vomiting, or unusual tiredness.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="guidance-item">
+                                <h4>Atorvastatin (20mg)</h4>
+                                <div class="guidance-content">
+                                    <p><strong>How to take:</strong> Take one tablet (20mg) by mouth once daily at bedtime.</p>
+                                    <p><strong>Special instructions:</strong> Can be taken with or without food. Taking at bedtime may help reduce side effects.</p>
+                                    <p><strong>Environmental considerations:</strong> Avoid grapefruit juice while taking this medication as it can increase side effects.</p>
+                                    <p><strong>Potential side effects:</strong> Muscle pain, weakness, headache, joint pain.</p>
+                                    <p><strong>Warning signs:</strong> Seek medical attention if you experience severe muscle pain, tenderness, or weakness.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Interaction Warnings -->
+                    <div class="result-card">
+                        <div class="result-card-header">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Interaction Warnings</h3>
+                        </div>
+                        <div class="warnings-list">
+                            <div class="warning-item">
+                                <div class="warning-icon"><i class="fas fa-exclamation-circle"></i></div>
+                                <div class="warning-content">
+                                    <h4>Moderate Interaction: Lisinopril + Metformin</h4>
+                                    <p>These medications may enhance each other's blood pressure-lowering effects. Monitor your blood pressure regularly.</p>
+                                </div>
+                            </div>
+                            <div class="warning-item">
+                                <div class="warning-icon"><i class="fas fa-exclamation-circle"></i></div>
+                                <div class="warning-content">
+                                    <h4>Food Interaction: Atorvastatin + Grapefruit</h4>
+                                    <p>Avoid grapefruit and grapefruit juice while taking Atorvastatin as it can increase the risk of side effects.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Schedule Recommendations -->
+                    <div class="result-card">
+                        <div class="result-card-header">
+                            <h3><i class="fas fa-calendar-alt"></i> Recommended Schedule</h3>
+                        </div>
+                        <div class="schedule-content">
+                            <div class="schedule-table">
+                                <div class="schedule-row header">
+                                    <div class="schedule-cell">Time</div>
+                                    <div class="schedule-cell">Medication</div>
+                                    <div class="schedule-cell">Instructions</div>
+                                </div>
+                                <div class="schedule-row">
+                                    <div class="schedule-cell">Morning (8:00 AM)</div>
+                                    <div class="schedule-cell">Lisinopril 10mg<br>Metformin 500mg</div>
+                                    <div class="schedule-cell">Take with breakfast</div>
+                                </div>
+                                <div class="schedule-row">
+                                    <div class="schedule-cell">Evening (6:00 PM)</div>
+                                    <div class="schedule-cell">Metformin 500mg</div>
+                                    <div class="schedule-cell">Take with dinner</div>
+                                </div>
+                                <div class="schedule-row">
+                                    <div class="schedule-cell">Bedtime (10:00 PM)</div>
+                                    <div class="schedule-cell">Atorvastatin 20mg</div>
+                                    <div class="schedule-cell">Take before going to bed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Environmental Adjustments -->
+                    <div class="result-card">
+                        <div class="result-card-header">
+                            <h3><i class="fas fa-cloud-sun"></i> Environmental Adjustments</h3>
+                        </div>
+                        <div class="adjustments-content">
+                            <div class="adjustment-item">
+                                <h4>Hot Weather Considerations</h4>
+                                <p>During hot weather, Lisinopril may increase your risk of dehydration. Drink plenty of water and avoid excessive heat exposure.</p>
+                            </div>
+                            <div class="adjustment-item">
+                                <h4>Seasonal Allergies</h4>
+                                <p>If you take over-the-counter allergy medications, check with your doctor as some may interact with Lisinopril.</p>
+                            </div>
+                            <div class="adjustment-item">
+                                <h4>Travel Recommendations</h4>
+                                <p>When traveling across time zones, maintain your medication schedule based on your home time zone for the first day, then gradually adjust to the new time zone.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Next Steps -->
+                    <div class="result-card">
+                        <div class="result-card-header">
+                            <h3><i class="fas fa-forward"></i> Next Steps</h3>
+                        </div>
+                        <div class="next-steps-content">
+                            <div class="next-step-item">
+                                <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
+                                <div class="step-content">
+                                    <h4>Schedule Follow-up Appointment</h4>
+                                    <p>Book a follow-up appointment with your doctor in 3 months to review your medication effectiveness.</p>
+                                    <a href="appointment.html" class="btn small-btn">Book Appointment</a>
+                                </div>
+                            </div>
+                            <div class="next-step-item">
+                                <div class="step-icon"><i class="fas fa-vial"></i></div>
+                                <div class="step-content">
+                                    <h4>Laboratory Tests</h4>
+                                    <p>Schedule blood tests to monitor kidney function, liver function, and blood glucose levels.</p>
+                                </div>
+                            </div>
+                            <div class="next-step-item">
+                                <div class="step-icon"><i class="fas fa-heart"></i></div>
+                                <div class="step-content">
+                                    <h4>Lifestyle Recommendations</h4>
+                                    <p>Continue with a heart-healthy diet, regular exercise, and blood pressure monitoring.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="results-disclaimer">
+                    <p><strong>Disclaimer:</strong> This guidance is generated based on the information you provided and general medical knowledge. It does not replace professional medical advice. Always consult with your healthcare provider before making any changes to your medication regimen.</p>
+                </div>
+                
+                <div class="results-feedback">
+                    <h3>Was this guidance helpful?</h3>
+                    <div class="feedback-buttons">
+                        <button id="helpful-btn" class="btn feedback-btn"><i class="fas fa-thumbs-up"></i> Yes, it was helpful</button>
+                        <button id="not-helpful-btn" class="btn feedback-btn"><i class="fas fa-thumbs-down"></i> No, it wasn't helpful</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-capsules"></i>
+                    <h2>HealthMate</h2>
+                    <p>Your Smart Medicine Guide</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="medicine-usage.html">Medicine Guide</a></li>
+                        <li><a href="appointment.html">Doctor Appointment</a></li>
+                        <li><a href="results.html">My Results</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@medisafe.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MediSafe. All rights reserved.</p>
+                <p>Disclaimer: This platform provides guidance only and does not replace professional medical advice.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to MediSafe</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn primary-btn">Login</button>
+                <p class="form-footer">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create an Account</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" required>
+                </div>
+                <button type="submit" class="btn primary-btn">Sign Up</button>
+                <p class="form-footer">Already have an account? <a href="#" id="show-login">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/results.js"></script>
+</body>
+</html>
+

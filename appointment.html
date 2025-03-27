@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Appointment - HealthMate</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+      <!-- Header Section -->
+      <header>
+          <div class="logo">
+              <i class="fas fa-capsules"></i>
+              <h1>HealMate</h1>
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="medicine-usage.html">Medicine Guide</a></li>
+                  <li><a href="appointment.html" class="active">Doctor Appointment</a></li>
+                  <li><a href="results.html">My Results</a></li>
+              </ul>
+          </nav>
+          <div class="user-profile">
+              <button id="login-btn">Login</button>
+              <button id="signup-btn">Sign Up</button>
+          </div>
+      </header>
+
+      <!-- Page Title -->
+      <section class="page-title">
+          <h1>Book a Doctor Appointment</h1>
+          <p>When you're experiencing concerning symptoms or need personalized medical advice, connect with a healthcare professional.</p>
+      </section>
+
+      <!-- Appointment Section -->
+      <section class="appointment-section">
+          <div class="section-container">
+              <div class="appointment-grid">
+                  <!-- Appointment Form -->
+                  <div class="appointment-form-container">
+                      <h2>Schedule Your Appointment</h2>
+                      <form id="appointment-form">
+                          <div class="form-group">
+                              <label for="appointment-name">Full Name</label>
+                              <input type="text" id="appointment-name" required>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="appointment-email">Email</label>
+                              <input type="email" id="appointment-email" required>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="appointment-phone">Phone Number</label>
+                              <input type="tel" id="appointment-phone" required>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="appointment-type">Appointment Type</label>
+                              <select id="appointment-type" required>
+                                  <option value="">Select appointment type</option>
+                                  <option value="general">General Consultation</option>
+                                  <option value="medication-review">Medication Review</option>
+                                  <option value="follow-up">Follow-up Visit</option>
+                                  <option value="emergency">Urgent Care</option>
+                              </select>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="appointment-date">Preferred Date</label>
+                              <input type="date" id="appointment-date" required>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="appointment-time">Preferred Time</label>
+                              <select id="appointment-time" required>
+                                  <option value="">Select time</option>
+                                  <option value="morning">Morning (9AM - 12PM)</option>
+                                  <option value="afternoon">Afternoon (1PM - 5PM)</option>
+                                  <option value="evening">Evening (6PM - 8PM)</option>
+                              </select>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="appointment-symptoms">Describe Your Symptoms</label>
+                              <textarea id="appointment-symptoms" rows="4" placeholder="Please describe your symptoms or concerns in detail"></textarea>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="appointment-doctor">Preferred Doctor (Optional)</label>
+                              <select id="appointment-doctor">
+                                  <option value="">No preference</option>
+                                  <option value="dr-smith">Dr. Smith - General Medicine</option>
+                                  <option value="dr-patel">Dr. Patel - Cardiology</option>
+                                  <option value="dr-johnson">Dr. Johnson - Pediatrics</option>
+                                  <option value="dr-garcia">Dr. Garcia - Internal Medicine</option>
+                              </select>
+                          </div>
+                          
+                          <div class="form-group checkbox-group">
+                              <input type="checkbox" id="appointment-urgent">
+                              <label for="appointment-urgent">This is urgent (requires attention within 24 hours)</label>
+                          </div>
+                          
+                          <button type="submit" class="btn primary-btn">Schedule Appointment</button>
+                      </form>
+                  </div>
+                  
+                  <!-- Appointment Info -->
+                  <div class="appointment-info">
+                      <div class="info-card">
+                          <h3><i class="fas fa-info-circle"></i> When to See a Doctor</h3>
+                          <p>You should schedule an appointment if you experience:</p>
+                          <ul>
+                              <li>Severe or persistent symptoms that don't improve</li>
+                              <li>Unexpected side effects from medications</li>
+                              <li>Symptoms that interfere with daily activities</li>
+                              <li>Need for prescription refills or adjustments</li>
+                              <li>Concerns about medication interactions</li>
+                          </ul>
+                      </div>
+                      
+                      <div class="info-card">
+                          <h3><i class="fas fa-user-md"></i> Our Healthcare Professionals</h3>
+                          <div class="doctor-profiles">
+                              <div class="doctor-profile">
+                                  <img src="/placeholder.svg?height=80&width=80" alt="Dr. Smith">
+                                  <div class="doctor-info">
+                                      <h4>Dr. Smith</h4>
+                                      <p>General Medicine</p>
+                                  </div>
+                              </div>
+                              <div class="doctor-profile">
+                                  <img src="/placeholder.svg?height=80&width=80" alt="Dr. Patel">
+                                  <div class="doctor-info">
+                                      <h4>Dr. Patel</h4>
+                                      <p>Cardiology</p>
+                                  </div>
+                              </div>
+                              <div class="doctor-profile">
+                                  <img src="/placeholder.svg?height=80&width=80" alt="Dr. Johnson">
+                                  <div class="doctor-info">
+                                      <h4>Dr. Johnson</h4>
+                                      <p>Pediatrics</p>
+                                  </div>
+                              </div>
+                              <div class="doctor-profile">
+                                  <img src="/placeholder.svg?height=80&width=80" alt="Dr. Garcia">
+                                  <div class="doctor-info">
+                                      <h4>Dr. Garcia</h4>
+                                      <p>Internal Medicine</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <div class="info-card">
+                          <h3><i class="fas fa-clock"></i> Appointment Hours</h3>
+                          <div class="hours-grid">
+                              <div class="day">Monday - Friday</div>
+                              <div class="time">9:00 AM - 8:00 PM</div>
+                              <div class="day">Saturday</div>
+                              <div class="time">10:00 AM - 4:00 PM</div>
+                              <div class="day">Sunday</div>
+                              <div class="time">Closed (Emergency Only)</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Emergency Section -->
+      <section class="emergency-section">
+          <div class="section-container">
+              <div class="emergency-banner">
+                  <div class="emergency-icon">
+                      <i class="fas fa-exclamation-triangle"></i>
+                  </div>
+                  <div class="emergency-content">
+                      <h2>Medical Emergency?</h2>
+                      <p>If you're experiencing severe symptoms that require immediate attention, please call emergency services or go to your nearest emergency room.</p>
+                      <div class="emergency-actions">
+                          <a href="tel:911" class="btn danger-btn"><i class="fas fa-phone"></i> Call 911</a>
+                          <button id="find-er-btn" class="btn secondary-btn"><i class="fas fa-map-marker-alt"></i> Find Nearest ER</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+          <div class="footer-content">
+              <div class="footer-logo">
+                  <i class="fas fa-capsules"></i>
+                  <h2>HealMate</h2>
+                  <p>Your Smart Medicine Guide</p>
+              </div>
+              <div class="footer-links">
+                  <h3>Quick Links</h3>
+                  <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="medicine-usage.html">Medicine Guide</a></li>
+                      <li><a href="appointment.html">Doctor Appointment</a></li>
+                      <li><a href="results.html">My Results</a></li>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="footer-contact">
+                  <h3>Contact Us</h3>
+                  <p><i class="fas fa-envelope"></i> support@healmate.com</p>
+                  <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                  <div class="social-icons">
+                      <a href="#"><i class="fab fa-facebook"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <p>&copy; 2023 HealMate. All rights reserved.</p>
+              <p>Disclaimer: This platform provides guidance only and does not replace professional medical advice.</p>
+          </div>
+      </footer>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Login to HealMate</h2>
+          <form id="login-form">
+              <div class="form-group">
+                  <label for="login-email">Email</label>
+                  <input type="email" id="login-email" required>
+              </div>
+              <div class="form-group">
+                  <label for="login-password">Password</label>
+                  <input type="password" id="login-password" required>
+              </div>
+              <button type="submit" class="btn primary-btn">Login</button>
+              <p class="form-footer">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+          </form>
+      </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signup-modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Create an Account</h2>
+          <form id="signup-form">
+              <div class="form-group">
+                  <label for="signup-name">Full Name</label>
+                  <input type="text" id="signup-name" required>
+              </div>
+              <div class="form-group">
+                  <label for="signup-email">Email</label>
+                  <input type="email" id="signup-email" required>
+              </div>
+              <div class="form-group">
+                  <label for="signup-password">Password</label>
+                  <input type="password" id="signup-password" required>
+              </div>
+              <div class="form-group">
+                  <label for="signup-confirm-password">Confirm Password</label>
+                  <input type="password" id="signup-confirm-password" required>
+              </div>
+              <button type="submit" class="btn primary-btn">Sign Up</button>
+              <p class="form-footer">Already have an account? <a href="#" id="show-login">Login</a></p>
+          </form>
+      </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/appointment.js"></script>
+</body>
+</html>
+

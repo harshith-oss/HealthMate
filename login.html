@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - HealthMate</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="login-page-body">
+  <div class="login-container">
+    <div class="login-logo">
+      <i class="fas fa-capsules"></i>
+      <h1>HealthMate</h1>
+    </div>
+    
+    <div class="login-card">
+      <h2>Welcome to HealthMate</h2>
+      <p>Your simple guide to taking medicines safely</p>
+      
+      <div class="login-tabs">
+        <button class="login-tab active" id="login-tab-btn">Login</button>
+        <button class="login-tab" id="signup-tab-btn">Sign Up</button>
+      </div>
+      
+      <!-- Login Form -->
+      <form id="login-form" class="login-form">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required>
+        </div>
+        <button type="submit" class="btn primary-btn full-width">Login</button>
+      </form>
+      
+      <!-- Signup Form -->
+      <form id="signup-form" class="login-form hidden">
+        <div class="form-group">
+          <label for="signup-name">Full Name</label>
+          <input type="text" id="signup-name" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-confirm-password">Confirm Password</label>
+          <input type="password" id="signup-confirm-password" required>
+        </div>
+        <button type="submit" class="btn primary-btn full-width">Sign Up</button>
+      </form>
+      
+      <div class="login-divider">
+        <span>OR</span>
+      </div>
+      
+      <button id="guest-access-btn" class="btn secondary-btn full-width">
+        Continue as Guest
+      </button>
+    </div>
+    
+    <p class="login-footer">
+      HealthMate helps you take your medicines correctly. We don't replace medical advice.
+    </p>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
+

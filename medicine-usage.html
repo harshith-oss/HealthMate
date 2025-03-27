@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine Usage Guide - HealMate</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+      <!-- Header Section -->
+      <header>
+          <div class="logo">
+              <i class="fas fa-capsules"></i>
+              <h1>HealMate</h1>
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="medicine-usage.html" class="active">Medicine Guide</a></li>
+                  <li><a href="appointment.html">Doctor Appointment</a></li>
+                  <li><a href="results.html">My Results</a></li>
+              </ul>
+          </nav>
+          <div class="user-profile">
+              <button id="login-btn">Login</button>
+              <button id="signup-btn">Sign Up</button>
+          </div>
+      </header>
+
+      <!-- Page Title -->
+      <section class="page-title">
+          <h1>Medicine Usage Guide</h1>
+          <p>Get personalized instructions on how to take your medications safely and effectively.</p>
+      </section>
+
+      <!-- Medicine Input Section -->
+      <section class="medicine-input-section">
+          <div class="section-container">
+              <h2>Tell Us About Your Medications</h2>
+              
+              <div class="input-cards">
+                  <!-- Medication Input Card -->
+                  <div class="input-card">
+                      <h3><i class="fas fa-pills"></i> Your Medications</h3>
+                      <div class="medication-list" id="medication-list">
+                          <!-- Medications will be added here -->
+                      </div>
+                      <div class="medication-input">
+                          <input type="text" id="medication-name" placeholder="Enter medication name">
+                          <button id="add-medication-btn" class="btn small-btn">Add</button>
+                      </div>
+                      <div id="medication-suggestions" class="suggestions"></div>
+                  </div>
+                  
+                  <!-- Health Conditions Card -->
+                  <div class="input-card">
+                      <h3><i class="fas fa-heartbeat"></i> Health Conditions</h3>
+                      <div class="condition-list" id="condition-list">
+                          <!-- Conditions will be added here -->
+                      </div>
+                      <div class="condition-input">
+                          <input type="text" id="condition-name" placeholder="Enter health condition">
+                          <button id="add-condition-btn" class="btn small-btn">Add</button>
+                      </div>
+                      <div id="condition-suggestions" class="suggestions"></div>
+                  </div>
+                  
+                  <!-- Symptoms Card -->
+                  <div class="input-card">
+                      <h3><i class="fas fa-head-side-cough"></i> Current Symptoms</h3>
+                      <div class="symptom-list" id="symptom-list">
+                          <!-- Symptoms will be added here -->
+                      </div>
+                      <div class="symptom-input">
+                          <input type="text" id="symptom-name" placeholder="Enter symptom">
+                          <button id="add-symptom-btn" class="btn small-btn">Add</button>
+                      </div>
+                      <div id="symptom-suggestions" class="suggestions"></div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Environmental Factors Section -->
+      <section class="environmental-section">
+          <div class="section-container">
+              <h2>Environmental Factors</h2>
+              <p>These factors can affect how your medications work and how you should take them.</p>
+              
+              <div class="env-factors-grid">
+                  <!-- Weather Factor -->
+                  <div class="env-factor-card">
+                      <h3><i class="fas fa-cloud-sun"></i> Weather</h3>
+                      <div class="factor-options">
+                          <div class="radio-option">
+                              <input type="radio" id="weather-hot" name="weather" value="hot">
+                              <label for="weather-hot">Hot</label>
+                          </div>
+                          <div class="radio-option">
+                              <input type="radio" id="weather-mild" name="weather" value="mild" checked>
+                              <label for="weather-mild">Mild</label>
+                          </div>
+                          <div class="radio-option">
+                              <input type="radio" id="weather-cold" name="weather" value="cold">
+                              <label for="weather-cold">Cold</label>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Season Factor -->
+                  <div class="env-factor-card">
+                      <h3><i class="fas fa-leaf"></i> Season</h3>
+                      <selec id="season-select" class="factor-select">
+                          <option value="spring">Spring</option>
+                          <option value="summer">Summer</option>
+                          <option value="fall">Fall</option>
+                          <option value="winter">Winter</option>
+                      </select>
+                  </div>
+                  
+                  <!-- Living Area Factor -->
+                  <div class="env-factor-card">
+                      <h3><i class="fas fa-home"></i> Living Area</h3>
+                      <selec id="area-select" class="factor-select">
+                          <option value="urban">Urban</option>
+                          <option value="suburban">Suburban</option>
+                          <option value="rural">Rural</option>
+                      </select>
+                  </div>
+                  
+                  <!-- Humidity Factor -->
+                  <div class="env-factor-card">
+                      <h3><i class="fas fa-tint"></i> Humidity</h3>
+                      <div class="factor-options">
+                          <div class="radio-option">
+                              <input type="radio" id="humidity-dry" name="humidity" value="dry">
+                              <label for="humidity-dry">Dry</label>
+                          </div>
+                          <div class="radio-option">
+                              <input type="radio" id="humidity-moderate" name="humidity" value="moderate" checked>
+                              <label for="humidity-moderate">Moderate</label>
+                          </div>
+                          <div class="radio-option">
+                              <input type="radio" id="humidity-humid" name="humidity" value="humid">
+                              <label for="humidity-humid">Humid</label>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Personal Factors Section -->
+      <section class="personal-section">
+          <div class="section-container">
+              <h2>Personal Factors</h2>
+              <p>These personal details help us provide more accurate guidance.</p>
+              
+              <div class="personal-factors-grid">
+                  <!-- Age Group -->
+                  <div class="personal-factor-card">
+                      <h3><i class="fas fa-user"></i> Age Group</h3>
+                      <selec id="age-select" class="factor-select">
+                          <option value="child">Child (0-12)</option>
+                          <option value="teen">Teen (13-17)</option>
+                          <option value="adult" selected>Adult (18-64)</option>
+                          <option value="senior">Senior (65+)</option>
+                      </select>
+                  </div>
+                  
+                  <!-- Weight Range -->
+                  <div class="personal-factor-card">
+                      <h3><i class="fas fa-weight"></i> Weight Range</h3>
+                      <selec id="weight-select" class="factor-select">
+                          <option value="underweight">Underweight</option>
+                          <option value="normal" selected>Normal</option>
+                          <option value="overweight">Overweight</option>
+                          <option value="obese">Obese</option>
+                      </select>
+                  </div>
+                  
+                  <!-- Pregnancy Status -->
+                  <div class="personal-factor-card">
+                      <h3><i class="fas fa-baby"></i> Pregnancy Status</h3>
+                      <div class="factor-options">
+                          <div class="radio-option">
+                              <input type="radio" id="pregnancy-yes" name="pregnancy" value="yes">
+                              <label for="pregnancy-yes">Pregnant</label>
+                          </div>
+                          <div class="radio-option">
+                              <input type="radio" id="pregnancy-no" name="pregnancy" value="no" checked>
+                              <label for="pregnancy-no">Not Pregnant</label>
+                          </div>
+                          <div class="radio-option">
+                              <input type="radio" id="pregnancy-na" name="pregnancy" value="na">
+                              <label for="pregnancy-na">Not Applicable</label>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Kidney Function -->
+                  <div class="personal-factor-card">
+                      <h3><i class="fas fa-kidneys"></i> Kidney Function</h3>
+                      <selet id="kidney-select" class="factor-select">
+                          <option value="normal" selected>Normal</option>
+                          <option value="mild">Mild Impairment</option>
+                          <option value="moderate">Moderate Impairment</option>
+                          <option value="severe">Severe Impairment</option>
+                          <option value="unknown">Unknown</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Generate Guidance Button -->
+      <section class="generate-section">
+          <button id="generate-guidance-btn" class="btn primary-btn large-btn">
+              <i class="fas fa-magic"></i> Generate Personalized Guidance
+          </button>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+          <div class="footer-content">
+              <div class="footer-logo">
+                  <i class="fas fa-capsules"></i>
+                  <h2>HealMate</h2>
+                  <p>Your Smart Medicine Guide</p>
+              </div>
+              <div class="footer-links">
+                  <h3>Quick Links</h3>
+                  <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="medicine-usage.html">Medicine Guide</a></li>
+                      <li><a href="appointment.html">Doctor Appointment</a></li>
+                      <li><a href="results.html">My Results</a></li>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="footer-contact">
+                  <h3>Contact Us</h3>
+                  <p><i class="fas fa-envelope"></i> support@healmate.com</p>
+                  <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                  <div class="social-icons">
+                      <a href="#"><i class="fab fa-facebook"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <p>&copy; 2023 HealMate. All rights reserved.</p>
+              <p>Disclaimer: This platform provides guidance only and does not replace professional medical advice.</p>
+          </div>
+      </footer>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Login to HealMate</h2>
+          <form id="login-form">
+              <div class="form-group">
+                  <label for="login-email">Email</label>
+                  <input type="email" id="login-email" required>
+              </div>
+              <div class="form-group">
+                  <label for="login-password">Password</label>
+                  <input type="password" id="login-password" required>
+              </div>
+              <button type="submit" class="btn primary-btn">Login</button>
+              <p class="form-footer">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+          </form>
+      </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signup-modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Create an Account</h2>
+          <form id="signup-form">
+              <div class="form-group">
+                  <label for="signup-name">Full Name</label>
+                  <input type="text" id="signup-name" required>
+              </div>
+              <div class="form-group">
+                  <label for="signup-email">Email</label>
+                  <input type="email" id="signup-email" required>
+              </div>
+              <div class="form-group">
+                  <label for="signup-password">Password</label>
+                  <input type="password" id="signup-password" required>
+              </div>
+              <div class="form-group">
+                  <label for="signup-confirm-password">Confirm Password</label>
+                  <input type="password" id="signup-confirm-password" required>
+              </div>
+              <button type="submit" class="btn primary-btn">Sign Up</button>
+              <p class="form-footer">Already have an account? <a href="#" id="show-login">Login</a></p>
+          </form>
+      </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/medicine-usage.js"></script>
+</body>
+</html>
+
